@@ -1,8 +1,8 @@
 # FireFrame?
 
-#### This originally started when I came across the fhircrackr. I have not found something similar in Julia yet, so I became decided to begin building parts of it. Although the examples below use FHIR resources as their examples, I suspect you could use this other non FHIR websites as well.
+#### This originally started when I came across the fhircrackr package in R. I have not found something similar in Julia yet, so I  decided to begin building parts of it. Although the examples below use FHIR resources as their examples, I suspect you could use this other non FHIR websites as well, but I have not tried.
 
-#### The goal is to simplify and streamline going from a JSON file (maybe xml one day idk the pros v cons) to a dataframe for  data tidying manipulation, and statisitcal testing. Some creative liberty has been taken to determine other features that one might find useful, such as get_table_design. 
+#### The goal is to simplify and streamline going from a JSON file (maybe xml one day idk the pros v cons) to a dataframe for data tidying manipulation, statisitcal testing, etc. Some creative liberty has been taken to work on other features that one might find useful, such as `get_table_design()`. 
 
 #### Currently included:
 - `search_resource(base_url, resource; max_entries)` 
