@@ -132,7 +132,7 @@ function get_table_design(json_data, current_path = "", design = OrderedDict{Str
 
 
 
-
+using EzXML
 ### Early XML Draft before I switched to method used above. +/- if i move further into xmls. If that is where the need and use are (not with jsons), i would be encouraged to continue xmls stuff.
 struct FHIRColumn
     resource_type::String
