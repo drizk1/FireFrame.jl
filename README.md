@@ -5,9 +5,9 @@
 #### The goal is to simplify and streamline going from a JSON file (maybe xml one day idk the pros v cons) to a dataframe for data tidying manipulation, statisitcal testing, etc. Some creative liberty has been taken to work on other features that one might find useful, such as `get_table_design()`. 
 
 #### Currently included:
-- `search_resource(base_url, resource; max_entries)` 
+- `search_resource(base_url, resource; max_entries, query_params)` 
 - `fireframe(object, column_design)` 
-- `get_table_design(object)` # as an OrderedDict
+- `get_table_design(object)` # returns an OrderedDict
 - `print_paths(object)`
 
 ```
@@ -39,8 +39,19 @@ fireframe(patients, column_design)
    4 │ 592917  na        na          na           na      na
    5 │ 592925  official  Test        Mustermann   female  2017-09-05T22:00:00.000Z
 ```
-##### Alternatively, `fireframe(patients, get_table_design(patients))` would have worked to fill the wide dataframe with all values, leaving the paths as teh column names. 
+##### Alternatively, `fireframe(patients, get_table_design(patients))` would have worked to fill the wide dataframe with all values, leaving the paths as the column names.
+```
+json_data = JSON.parse("{\"patient\": {\"name\": \"John\", \"age\": 30, \"conditions\": [{\"type\": \"diabetes\"}, {\"type\": \"hypertension\"}]}}")
 
+fireframe(json_data_with_entry, get_table_design(json_data))
+``` 
+```
+1×3 DataFrame
+ Row │ patient.name  patient.conditions.type  patient.age 
+     │ String        String                   String      
+─────┼────────────────────────────────────────────────────
+   1 │ John          diabetes ~ hypertension  30
+```
 
 
 ### `print_paths()` and `get_table_design()`
